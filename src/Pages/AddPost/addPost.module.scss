@@ -1,0 +1,31 @@
+.title{
+    input{
+        font-size: 40px;
+        font-weight: 700;
+    }
+    div{
+        &:before, &:after{
+            display: none;
+        }
+    }
+}
+
+.image{
+    widows: 100%;
+}
+.tags{
+    margin: 15px 0;
+}
+.editor{
+    margin: 30px 0;
+    :global{
+        .cm-s-aesymde{
+            bottom: 0;
+            font-size: 22px;
+        }
+        .editor-toolbar{
+            bottom: 0;
+            background-color: rgba(0,0,0, .02);
+        }
+    }
+}

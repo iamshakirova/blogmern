@@ -1,0 +1,33 @@
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import baseQuery from './baseQuery';
+
+
+const createRequest = (url, method, data) => ({
+    url:url, method, body:data
+})
+
+export const postApi = createApi({
+
+
+    reducerPath: 'postApi',
+    baseQuery,
+    endpoints: (builder) => ({
+        getPosts: builder.query({
+            query: () => createRequest('/posts')
+        }),
+        getPostDetails: builder.query({
+            query: (id) => createRequest(`/posts/${id}`)
+        }),
+        createPost: builder.mutation({
+            query:(post) => createRequest('/posts', 'POST', post)
+        }),
+        uploadImage:builder.mutation({
+            query:(image) => createRequest('/upload', 'POST', image)
+        }),
+        removePost: builder.mutation({
+            query: (id) => createRequest(`/posts/${id}`, 'DELETE', id)
+        })
+    })
+});
+
+export const { useGetPostsQuery, useGetPostDetailsQuery, useCreatePostMutation, useUploadImageMutation, useRemovePostMutation } = postApi;

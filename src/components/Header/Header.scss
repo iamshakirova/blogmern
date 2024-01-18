@@ -1,0 +1,23 @@
+.header{
+    padding: 15px 0;
+    background-color: #fff;
+    &-btns{
+        display: flex;
+        gap: 10px;
+    }
+    &-logo{
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+.post-btn{
+    border: 2px solid #4361ee;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #4361ee;
+}
+
